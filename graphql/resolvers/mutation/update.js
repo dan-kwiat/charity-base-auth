@@ -2,15 +2,17 @@ const { dynamoClient } = require('../../../connection')
 
 const updateApiKey = async function({ id, roles }) {
   try {
+    const dateString = new Date().toISOString()
     const params = {
       Key: { id },
       ConditionExpression: 'attribute_exists(id)',
-      UpdateExpression: 'set #r = :roles',
+      UpdateExpression: 'SET #r = :roles, updatedAt = :updatedAt',
       ExpressionAttributeNames: {
         '#r': 'roles',
       },
       ExpressionAttributeValues: {
-        ':roles' : roles,
+        ':roles': roles,
+        ':updatedAt': dateString,
       },
       ReturnValues: 'ALL_NEW',
     }

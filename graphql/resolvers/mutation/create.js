@@ -26,10 +26,13 @@ const createApiKey = async function(_, req) {
   }
 
   try {
+    const dateString = new Date().toISOString()
     const item = {
       id: uuidv4(),
       userId: req.user.sub,
       roles: DEFAULT_ROLES,
+      createdAt: dateString,
+      updatedAt: dateString,
     }
     const params = {
       Item: item,
