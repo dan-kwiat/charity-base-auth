@@ -1,0 +1,31 @@
+{
+  "name": "charity-base-auth",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charity-base/charity-base-auth.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.397.0",
+    "bunyan": "^1.8.12",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.3",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.1.1",
+    "graphql-tools": "^4.0.4",
+    "jsonwebtoken": "^8.5.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4",
+    "nodemon": "^1.18.9"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js | ./node_modules/bunyan/bin/bunyan",
+    "test": "jest",
+    "deploy:production": "now && now alias https://charity-base-auth-graphql.now.sh",
+    "deploy:staging": "now && now alias https://charity-base-auth-graphql-staging.now.sh"
+  }
+}

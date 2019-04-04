@@ -1,0 +1,6 @@
+{
+  "dynamo" : {
+    "region" : "eu-west-2",
+    "table" : "charity-base-api-keys"
+  }
+}
