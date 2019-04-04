@@ -19,7 +19,7 @@ const typeDefs = `
   }
 
   type MutationApiKeys {
-    createKey: ApiKey @jwtAuth(scopes: ["edit:apikeys"])
+    createKey: ApiKey
     updateKey(
       id: ID!
       roles: [String!]!
