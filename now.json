@@ -11,6 +11,7 @@
   "builds": [
     { "src": "server.js", "use": "@now/node-server" }
   ],
+  "regions": ["lhr", "sfo"],
   "routes": [
     { "src": "/auth/graphql", "dest": "/server.js" }
   ]
